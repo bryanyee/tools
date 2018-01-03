@@ -38,6 +38,7 @@ alias gcb="git branch; git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy; ec
 alias groot="git rev-parse --show-toplevel"
 alias gcdroot="cd `git rev-parse --show-toplevel`"
 alias gd="git diff"
+alias gdl="git diff HEAD^ HEAD"
 alias gdc="git diff --cached"
 alias gcm="git checkout master"
 alias gcl="git checkout -"
