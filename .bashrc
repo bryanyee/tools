@@ -21,7 +21,7 @@ alias es="env | grep -i"
 alias paths="path_search" # see function
 alias lss="ls -a | grep -i"
 alias bx="bundle exec"
-alias pm="precise_math"
+alias pm="precise_math" # see function
 alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
 alias pcd="cd ~/projects; cd"
@@ -54,7 +54,7 @@ alias gca="git_commit_ammend" # see function
 # switch_dialog
 # show
 # open_sublime
-# math
+# precise_math
 # copy_last
 # path_search
 
