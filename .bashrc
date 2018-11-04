@@ -398,17 +398,17 @@ function switch_dialog {
   esac
 }
 
-# Find executable scripts or functions
+# Find executable scripts, functions, or aliases
 # show <option> [search]
 #
 # Arguments:
 # search  :  the name of a script or function
 #
 # Options:
-# -s      :  "show" - cat the script/function
+# -s      :  "show" - cat the script/function/alias
 function show {
   if [ $# = 0 ]; then
-    echo "usage: show <script>/<function>"
+    echo "usage: show <script>/<function>/<alias>"
   elif [ $# = 1 ] || [ $# = 2 ]; then
     if [ $# = 1 ]; then search=$1; fi
     if [ $# = 2 ]; then search=$2; fi
@@ -444,11 +444,22 @@ function show {
         fi
       fi
       ;;
+    "alias")
+      if [ $# = 1 ]; then
+        type -a $1
+      else
+        type -a $2
+      fi
+      ;;
     "builtin")
-      echo "$1 is a shell builtin"
+      if [ $# = 1 ]; then
+        echo "$1 is a shell builtin"
+      else
+        echo "$2 is a shell builtin"
+      fi
       ;;
     *)
-      echo "Script or function not found."
+      echo "Script, function, or alias not found."
       ;;
     esac
   else
