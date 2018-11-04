@@ -4,8 +4,11 @@
 
 # TODO
 
-# locate files - current directory, git repo, engineering/jarvis repo, path, important locations
+# use local variables
+# locate files - current directory, git repo, path, important locations
 # stash the number of specified commits with the saved commit message
+# get the diff for a commit
+# add function to count lines e.g. git branch -a | wc -l  ?? wc -l <<<
 
 # ALIASES
 
