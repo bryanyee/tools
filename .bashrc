@@ -28,6 +28,7 @@ alias pm="precise_math" # see function
 alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
 alias pcd="cd ~/projects; cd"
+alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 10001; then kill <process id>
 
 # git aliases
 alias sw="switch_dialog" # see function
