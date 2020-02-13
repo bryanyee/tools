@@ -1,4 +1,5 @@
-ag or ripgrep
+ag
+ripgrep
 git
 sublime
 tmux
