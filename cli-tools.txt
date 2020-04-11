@@ -4,3 +4,4 @@ git
 sublime
 tmux
 vim
+tldr
