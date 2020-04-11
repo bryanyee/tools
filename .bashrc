@@ -10,6 +10,11 @@
 # get the diff for a commit
 # add function to count lines e.g. git branch -a | wc -l  ?? wc -l <<<
 
+# SHORTCUT TO NOTES
+
+export TOOLS_REPO=${HOME}/projects/myprojects/tools
+alias tools="open -a \"Sublime Text\" ${TOOLS_REPO}"
+
 # ALIASES
 
 alias bashrc="open -a \"Sublime Text\" ~/.bashrc"
