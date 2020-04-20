@@ -30,3 +30,16 @@ git log -S <string> <path> # Scoped to a particular file path, retrieves the co
 git log -G <regex>
 git log -p -G <regex>
 git log -G <regex> <path>
+
+
+### git tags
+git fetch --all --tags                    # Fetch all tags
+git tag -l                                # List all tags
+git checkout tags/<tag> -b <branch>       # Checkout a branch for a tag
+git checkout tags/4.2.2 -b v4.2.2-branch
+
+
+### Misc.
+
+# View file names only in a diff
+git diff --name-only <sha> <sha>
