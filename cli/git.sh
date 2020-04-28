@@ -1,8 +1,8 @@
 ### git-stash
 
-# Stash only some files
-git stash --keep-index # git add files to staging to prevent them from being stashed
-git stash -p           # Interactively choose which files to stash
+# Advanced Stash
+git stash --keep-index            # git add files to staging to keep them in staging, and save the whole diff to a stash.
+git stash save --patch <message>  # Interactively choose which files to stash.
 
 # To apply the changes from only some files in a stash:
 git checkout stash@{#} -- <path>
