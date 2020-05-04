@@ -25,5 +25,7 @@ yarn info <package>           # Fetch info about a package, including latest sta
 ### Misc.
 
 # Kill a process
-ps | grep -i <search>
-kill -9 <pid>
+ps | grep -i <search> # List running processes.
+lsof -i ':<port>'     # List what's listening on a port.
+
+kill -9 <pid>         # Kill the process.
