@@ -29,3 +29,6 @@ ps | grep -i <search> # List running processes.
 lsof -i ':<port>'     # List what's listening on a port.
 
 kill -9 <pid>         # Kill the process.
+
+# scp
+scp remote_host:path/to/remote_file path/to/local_directory
