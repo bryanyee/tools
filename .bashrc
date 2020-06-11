@@ -34,6 +34,7 @@ alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
 alias pcd="cd ~/projects; cd"
 alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 10001; then kill <process id>
+alias ip="ipconfig getifaddr en0"
 
 # git aliases
 alias sw="switch_dialog" # see function
