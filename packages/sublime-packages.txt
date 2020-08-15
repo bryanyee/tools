@@ -15,4 +15,5 @@ Sass
 SublimeLinter
 SublimeLinter-contrib-eslint
 SublimeLinter-rubocop
+TypeScript
 YAML Nav
