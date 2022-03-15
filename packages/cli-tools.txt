@@ -1,7 +1,5 @@
-ag
-ripgrep
+ag / ripgrep
 git
-sublime
 tmux
 vim
 tldr
