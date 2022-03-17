@@ -3,3 +3,4 @@ ESLint
 HTML Snippets
 Live Share
 Rainbow Brackets
+GitLens
