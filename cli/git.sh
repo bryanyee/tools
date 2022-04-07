@@ -18,7 +18,7 @@ git rev-list -n 1 HEAD -- <path>          # Returns the commit
 git checkout <deleting_commit>^ -- <path> #  Retrieves the deleted file
 
 # Find if a commit exists in a branch:
-git log --online --grep <sha>
+git log --oneline --grep <sha>
 git branch --contains <sha>
 
 # Search for commits that changed the number of occurrences of a string:
