@@ -18,13 +18,13 @@ git rev-list -n 1 HEAD -- <path>          # Returns the commit
 git checkout <deleting_commit>^ -- <path> #  Retrieves the deleted file
 
 # Find if a commit exists in a branch:
-git log --oneline --grep <sha>
+git log --oneline | grep <sha>
 git branch --contains <sha>
 
 # Search for commits that changed the number of occurrences of a string:
-git log -S <string>        # Retrieves the commit
-git log -p -S <string>     # Retrieves the commit and its diff
-git log -S <string> <path> # Scoped to a particular file path, retrieves the commit
+git log -S <string>        # Retrieves the commit
+git log -p -S <string>     # Retrieves the commit and its diff
+git log -S <string> <path> # Scoped to a particular file path, retrieves the commit
 
 # Finds all commits involving the matched regex:
 git log -G <regex>
