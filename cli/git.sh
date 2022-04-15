@@ -39,7 +39,10 @@ git checkout tags/<tag> -b <branch>       # Checkout a branch for a tag
 git checkout tags/4.2.2 -b v4.2.2-branch
 
 
-### Misc.
+### Diffs
 
 # View file names only in a diff
 git diff --name-only <sha> <sha>
+
+# View diff and ignore changes in whitespace (such as if code gets wrapped in a block and becomes indented)
+git diff -w  # git diff --ignore-all-space
