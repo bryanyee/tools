@@ -1,6 +1,7 @@
 Docker
 ESLint
 HTML Snippets
+Slim
 Live Share
 Rainbow Brackets
 GitLens
