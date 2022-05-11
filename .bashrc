@@ -27,6 +27,7 @@ alias h="history"
 alias hs="history_search" # see function
 alias es="env | grep -i"
 alias paths="path_search" # see function
+alias show="type -a"
 alias lss="ls -a | grep -i"
 alias bx="bundle exec"
 alias pm="precise_math" # see function
@@ -62,7 +63,6 @@ alias gca="git_commit_ammend" # see function
 # history_search
 # switch
 # switch_dialog
-# show
 # open_sublime
 # precise_math
 # copy_last
@@ -408,74 +408,6 @@ function switch_dialog {
   esac
 }
 
-# Find executable scripts, functions, or aliases
-# show <option> [search]
-#
-# Arguments:
-# search  :  the name of a script or function
-#
-# Options:
-# -s      :  "show" - cat the script/function/alias
-function show {
-  if [ $# = 0 ]; then
-    echo "usage: show <script>/<function>/<alias>"
-  elif [ $# = 1 ] || [ $# = 2 ]; then
-    if [ $# = 1 ]; then search=$1; fi
-    if [ $# = 2 ]; then search=$2; fi
-    command_type=`type -t $search`
-    case $command_type in
-    "file")
-      script_path=`which $search`
-      echo "Script found:"
-      echo $script_path
-      if [ $# = 2 ]; then
-        if [ $1 = "-s" ]; then
-          echo "----------"
-          cat $script_path
-        else
-          echo "$1 is not a valid option."
-          echo "Use -s to cat the script."
-        fi
-      fi
-      ;;
-    "function")
-      shopt -s extdebug
-      func_path=`declare -F $search`
-      shopt -u extdebug
-      echo "Function found:"
-      echo $func_path
-      if [ $# = 2 ]; then
-        if [ $1 = "-s" ]; then
-          echo "----------"
-          type $search
-        else
-          echo "$1 is not a valid option."
-          echo "Use -s to display the function."
-        fi
-      fi
-      ;;
-    "alias")
-      if [ $# = 1 ]; then
-        type -a $1
-      else
-        type -a $2
-      fi
-      ;;
-    "builtin")
-      if [ $# = 1 ]; then
-        echo "$1 is a shell builtin"
-      else
-        echo "$2 is a shell builtin"
-      fi
-      ;;
-    *)
-      echo "Script, function, or alias not found."
-      ;;
-    esac
-  else
-    echo "Too many arguments."
-  fi
-}
 
 # aliased to "opens"
 # Open files in Sublime
