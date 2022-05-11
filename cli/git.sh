@@ -11,6 +11,12 @@ git checkout stash@{#} -- <path>
 git stash apply <stash_hash>
 
 
+### git-rebase
+
+git rebase -i <sha>
+git rebase -i HEAD~<number of commits>
+
+
 ### git history
 
 # Find the last commit(s) that affected a (deleted) file:
