@@ -17,8 +17,11 @@ alias tools="open -a \"Sublime Text\" ${TOOLS_REPO}"
 
 # ALIASES
 
-alias bashrc="open -a \"Sublime Text\" ~/.bashrc"
-alias bashp="open -a \"Sublime Text\" ~/.bash_profile"
+alias bashrc="code ~/.bashrc"
+alias sbashrc="source ~/.bashrc"
+alias zshrc="code ~/.zshrc"
+alias szshrc="source ~/.zshrc"
+
 alias sbrc="source ~/.bashrc"
 alias opens="open_sublime" # see function
 alias ol="open_sublime -l" # see function
