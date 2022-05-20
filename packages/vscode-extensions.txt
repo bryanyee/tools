@@ -1,6 +1,7 @@
 Docker
 ESLint
 HTML Snippets
+VSCode Ruby
 Slim
 Live Share
 Rainbow Brackets
