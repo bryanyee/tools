@@ -42,7 +42,7 @@ alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 1000
 alias ip="ipconfig getifaddr en0"
 
 # git aliases
-alias sw="switch_dialog" # see function
+alias gbd="git_branch_dialog.sh" # file in PATH at /usr/local/bin
 alias glo="git_log_oneline" # see function
 alias gls="git_log_search" # see function
 alias gs="git status"
@@ -65,7 +65,6 @@ alias gca="git_commit_ammend" # see function
 # git_log_search
 # git_commit_ammend
 # history_search
-# switch_dialog
 # open_sublime
 # precise_math
 # copy_last
@@ -254,80 +253,6 @@ Arguments:
 
 Options:
   -e      :  'execute' - allows the user to enter a number to execute a command immediately"
-}
-
-
-# aliased to "sw"
-# Easily checkout git branches, listed from a dialog menu
-# dialog settings may be set in ~/.dialogrc
-# switch_dialog
-function switch_dialog {
-  curr_branch=`git rev-parse --abbrev-ref HEAD`
-  if [ -z $curr_branch ]; then
-    return
-  fi
-
-  DIALOG_OK=0
-  DIALOG_CANCEL=1
-  DIALOG_ESC=255
-
-  tempfile=`tempfile 2>/dev/null` || tempfile=/tmp/test$$
-  trap "rm -f $tempfile" 0 1 2 5 15
-
-  curr_branch_index=""
-  branches=`git branch | tr -s "*" " "`
-  dialog_args=""
-
-  counter1=0
-  for b1 in $branches; do
-    branch_line=""
-    if [ $b1 = $curr_branch ]; then
-      branch_line="> $b1"
-      curr_branch_index=$counter1
-    else
-      branch_line="$counter1 $b1"
-    fi
-    dialog_args="$dialog_args $branch_line "
-    let counter1+=1
-  done
-
-  dialog --keep-tite --title "git-checkout" \
-          --menu "You are currently on branch:\n${curr_branch}\nSwitch to:" 0 0 0 \
-          $dialog_args 2> $tempfile
-
-  return_status=$?
-
-  case $return_status in
-    $DIALOG_OK)
-      branch_entry=`cat $tempfile`
-
-      if [ $branch_entry = ">" ]; then
-        echo -e "\n\n-> git checkout $curr_branch"
-        echo "Already on '${curr_branch}'"
-        return
-      fi
-
-      counter2=0
-      for b2 in $branches; do
-        if [ $branch_entry = $counter2 ]; then
-          echo -e "\n\n-> git checkout $b2"
-          git checkout $b2
-        fi
-        let counter2+=1
-      done
-      ;;
-    $DIALOG_CANCEL)
-      echo -e "\n\nQuit."
-      echo "On branch $curr_branch"
-      ;;
-    $DIALOG_ESC)
-      echo -e "\n\nQuit."
-      echo "On branch $curr_branch"
-      ;;
-    *)
-      echo -e "\n\nInvalid operation."
-      echo "On branch $curr_branch"
-  esac
 }
 
 
