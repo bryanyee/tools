@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# Switch git branches, given a dialog menu to select from
+# A keyboard-accessible dialog menu for switching git branches
 
 # - Put this script in a directory in your PATH, such as /usr/local/bin
-# - Make the script executable: `chmod +x git_branch_dialog.sh`
-# - (optional) Dialog settings may be set in ~/.dialogrc
+# - Make the script executable: `chmod +x /usr/local/bin/git_branch_dialog.sh`
+# - (optional) Dialog settings may be set in ~/.dialogrc, such as to change the background color
 #   - https://bash.cyberciti.biz/guide/Dialog_customization_with_configuration_file
 #   - `dialog --create-rc ~/.dialogrc`
 #   - use_colors = ON
 #   - screen_color = (CYAN,BLACK,ON)
-# - Set alias in .bashrc/.zshrc: `alias gbd=git_branch_dialog.sh`
+# - Set alias in .bashrc/.zshrc: `alias gbd="git_branch_dialog.sh"`
 # - Run `gbd`
 
 function git_branch_dialog {
