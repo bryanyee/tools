@@ -30,6 +30,7 @@ alias h="history"
 alias hs="history_search" # see function
 alias es="env | grep -i"
 alias paths="path_search" # see function
+# alias paths="tr ':' '\n' <<< ${PATH} | grep "  Alternative for zsh
 alias show="type -a"
 alias lss="ls -a | grep -i"
 alias bx="bundle exec"
