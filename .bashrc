@@ -65,7 +65,6 @@ alias gca="git_commit_ammend" # see function
 # git_log_search
 # git_commit_ammend
 # history_search
-# switch
 # switch_dialog
 # open_sublime
 # precise_math
@@ -257,87 +256,6 @@ Options:
   -e      :  'execute' - allows the user to enter a number to execute a command immediately"
 }
 
-# see switch_dialog for improved function
-# Easily checkout git branches
-# switch [branch]
-#
-# Arguments:
-# branch  :  (optional) git branch to switch to
-#
-# If [branch] is not provided, all branches will be listed. Then enter
-# the index that corresponds with a branch or the branch name to switch branches.
-function switch {
-  curr_branch=`git rev-parse --abbrev-ref HEAD`
-  if [ -z $curr_branch ]; then
-    return
-  fi
-
-  if [ $# = 1 ]; then
-    echo "-> git checkout $1"
-    git checkout $1
-    return
-  fi
-
-  curr_branch_index=""
-  branches=`git branch | tr -s "*" " "`
-
-  GREEN='\033[0;32m'
-  NC='\033[0m'
-
-  counter1=0
-  for b1 in $branches; do
-    branch_line=" $counter1     $b1"
-    if [ $b1 = "master" ]; then
-      branch_line=${branch_line/"  "/"/m"}
-    fi
-    if [ $b1 = $curr_branch ]; then
-      branch_line=${branch_line/"   "/" * "}
-      branch_line="${GREEN}${branch_line}${NC}"
-      curr_branch_index=$counter1
-    fi
-    echo -e "$branch_line"
-    let counter1+=1
-  done
-
-  echo -e "\nWhich branch?"
-  read branch_entry
-
-  if [ -z $branch_entry ]; then
-    echo "Please enter a branch number or name."
-    return
-  fi
-
-  if [ $branch_entry = "q" ]; then
-    echo "On branch $curr_branch"
-    return
-  fi
-
-  if [ $branch_entry = $curr_branch_index ] || [ $branch_entry = $curr_branch ]; then
-    echo "-> git checkout $curr_branch"
-    echo "Already on '${curr_branch}'"
-    return
-  fi
-
-  if [ $branch_entry = "m" ] || [ $branch_entry = "master" ]; then
-    echo "-> git checkout master"
-    git checkout master
-    return
-  fi
-
-  counter2=0
-  for b2 in $branches; do
-    if [ $branch_entry = $counter2 ] || [ $branch_entry = $b2 ]; then
-
-      echo "-> git checkout $b2"
-      git checkout $b2
-      return
-    fi
-    let counter2+=1
-  done
-
-  echo "-> git checkout $branch_entry"
-  echo "error: pathspec '${branch_entry}' did not match any file(s) known to git."
-}
 
 # aliased to "sw"
 # Easily checkout git branches, listed from a dialog menu
