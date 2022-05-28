@@ -3,6 +3,7 @@ ESLint
 HTML Snippets
 VSCode Ruby
 Slim
+Python
 Live Share
 Rainbow Brackets
 GitLens
