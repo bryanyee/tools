@@ -9,6 +9,9 @@ grep -i -IR <string> .
 ag -g <string>
 find . -name <pattern>
 
+# Grep and exclude pattern
+grep -v <string>
+
 
 ### Rails
 
