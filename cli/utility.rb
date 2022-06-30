@@ -10,3 +10,7 @@ db:migrate VERSION=20080906120000
 
 # Rollback migration with a specific version
 rails db:migrate:down VERSION=20080906120000
+
+
+# Include Rails path helpers in a Rails console
+include Rails.application.routes.url_helpers
