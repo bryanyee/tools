@@ -17,6 +17,11 @@ git rebase -i <sha>                    # Rebase up to (but not including) the sp
 git rebase -i HEAD~<number of commits> # Rebase the exact number of commits specified, starting from the latest commit
 
 
+### Undo a merge commit
+git revert -m 1 <merge-commit-hash>
+git reset --hard <commit-before-merge>
+
+
 ### git history
 
 # Find the last commit(s) that affected a (deleted) file:
