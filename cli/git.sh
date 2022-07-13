@@ -1,8 +1,8 @@
 ### git-stash
 
 # Advanced Stash
-git stash --keep-index            # git add files to staging to keep them in staging, and save the whole diff to a stash.
-git stash save --patch <message>  # Interactively choose which files to stash.
+git stash --keep-index           # git add files to staging to keep them in staging, and save the whole diff to a stash.
+git stash save --patch <message> # Interactively choose which files to stash.
 
 # To apply the changes from only some files in a stash:
 git checkout stash@{#} -- <path>
@@ -57,3 +57,7 @@ git diff --name-only <sha> <sha>
 
 # View diff and ignore changes in whitespace (such as if code gets wrapped in a block and becomes indented)
 git diff -w  # git diff --ignore-all-space
+
+
+### Push an empty commit
+git commit --allow-empty -m "Empty-Commit"
