@@ -2,7 +2,8 @@
 
 # A keyboard-accessible dialog menu for switching git branches
 
-# - Put this script in a directory in your PATH, such as /usr/local/bin
+# - `brew install dialog`
+# - Put this script (git_branch_dialog.sh) in a directory in your PATH, such as /usr/local/bin (may need sudo)
 # - Make the script executable: `chmod +x /usr/local/bin/git_branch_dialog.sh`
 # - (optional) Dialog settings may be set in ~/.dialogrc, such as to change the background color
 #   - https://bash.cyberciti.biz/guide/Dialog_customization_with_configuration_file
