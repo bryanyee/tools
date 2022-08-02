@@ -59,5 +59,14 @@ git diff --name-only <sha> <sha>
 git diff -w  # git diff --ignore-all-space
 
 
+### Saving a diff to a patch and applying the patch
+# Useful as an alternative to stashing and/or rebasing + squashing for the following cases:
+# - Preserving the commits is desired.
+# - The commits include merge commits (can't be combined with rebasing).
+# - Saving the diff and sending it as a file (can't do this with stashes).
+git diff <base_branch> <feature_branch> > <file_name>.patch # Saves the diff between branches as a file
+git apply <file_name>.patch                                 # Applies the saved diff to the current branch
+
+
 ### Push an empty commit
 git commit --allow-empty -m "Empty-Commit"
