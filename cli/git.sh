@@ -54,6 +54,11 @@ git checkout tags/4.2.2 -b v4.2.2-branch
 
 # View file names only in a diff
 git diff --name-only <sha> <sha>
+git diff --name-only <branch> <branch>
+
+# View line change count in a diff
+git diff --stat <sha> <sha>
+git diff --stat <branch> <branch>
 
 # View diff and ignore changes in whitespace (such as if code gets wrapped in a block and becomes indented)
 git diff -w  # git diff --ignore-all-space
@@ -61,7 +66,7 @@ git diff -w  # git diff --ignore-all-space
 
 ### Saving a diff to a patch and applying the patch
 # Useful as an alternative to stashing and/or rebasing + squashing for the following cases:
-# - Preserving the commits is desired.
+# - Preserving the commits in a separate branch is desired.
 # - The commits include merge commits (can't be combined with rebasing).
 # - Saving the diff and sending it as a file (can't do this with stashes).
 git diff <base_branch> <feature_branch> > <file_name>.patch # Saves the diff between branches as a file
