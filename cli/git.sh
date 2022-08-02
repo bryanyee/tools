@@ -57,11 +57,17 @@ git diff --name-only <sha> <sha>
 git diff --name-only <branch> <branch>
 
 # View line change count in a diff
-git diff --stat <sha> <sha>
+git diff --stat <sha> <sha>    # easy-to-read format
 git diff --stat <branch> <branch>
+
+git diff --numstat <sha> <sha> # tabular format
+git diff --numstat <branch> <branch>
 
 # View diff and ignore changes in whitespace (such as if code gets wrapped in a block and becomes indented)
 git diff -w  # git diff --ignore-all-space
+
+# View diff between two files, outside of git
+diff <old_file> <new_file>
 
 
 ### Saving a diff to a patch and applying the patch
