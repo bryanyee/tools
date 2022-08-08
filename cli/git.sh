@@ -11,7 +11,7 @@ git checkout stash@{#} -- <path>
 git stash apply <stash_hash>
 
 
-### git-rebase
+### git-rebase - squash commits, reorder commits, change commit mesesages
 
 git rebase -i <sha>                    # Rebase up to (but not including) the specified sha
 git rebase -i HEAD~<number of commits> # Rebase the exact number of commits specified, starting from the latest commit
