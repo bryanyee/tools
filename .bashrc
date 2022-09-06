@@ -29,8 +29,8 @@ alias cl="copy_last" # see function
 alias h="history"
 alias hs="history_search" # see function
 alias es="env | grep -i"
-alias paths="path_search" # see function
-# alias paths="tr ':' '\n' <<< ${PATH} | grep "  Alternative for zsh
+alias paths="echo \"${PATH//:/\n}\""
+# alias paths="tr ':' '\n' <<< ${PATH}" # Alternative for zsh
 alias show="type -a"
 alias lss="ls -a | grep -i"
 alias bx="bundle exec"
@@ -68,7 +68,6 @@ alias gca="git_commit_ammend" # see function
 # open_sublime
 # precise_math
 # copy_last
-# path_search
 
 
 
@@ -330,23 +329,4 @@ Arguments:
 
 Options:
  -p [N]     : 'precision' - specify the N number of digits of precision"
-}
-
-# aliased to "paths"
-# Display all directories in $PATH, with regex search
-# path_search [search]
-#
-# Arguments
-# search   :  (optional) a regular expression to paths
-function path_search {
-  paths=`echo $PATH`
-  IFS=':' read -r -a path_array <<< "$paths"
-
-  for path in "${path_array[@]}"; do
-    if [ $# = 1 ]; then
-      echo $path | grep -i $1
-    else
-      echo $path
-    fi
-  done
 }
