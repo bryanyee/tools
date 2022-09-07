@@ -27,6 +27,10 @@ yarn info <package>           # Fetch info about a package, including latest sta
 
 ### Misc.
 
+# File permissions
+ls -l | grep temp.txt # Show file permissions for a file
+chmod 777 temp.txt    # Give current user full access to the file
+
 # Kill a process
 ps | grep -i <search> # List running processes.
 lsof -i ':<port>'     # List what's listening on a port.
