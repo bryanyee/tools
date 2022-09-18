@@ -10,10 +10,12 @@
 # get the diff for a single commit
 # add function to count lines e.g. git branch -a | wc -l  ?? wc -l <<<
 
+
 # SHORTCUT TO NOTES
 
 export TOOLS_REPO=${HOME}/projects/myprojects/tools
 alias tools="code ${TOOLS_REPO}"
+
 
 # ALIASES
 
@@ -56,6 +58,15 @@ alias gdc="git diff --cached"
 alias gcm="git checkout master"
 alias gcl="git checkout -"
 alias gca="git_commit_ammend" # see function
+
+
+# MISC.
+
+# nvm - Added automatically https://github.com/nvm-sh/nvm#install--update-script
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # FUNCTIONS
 
