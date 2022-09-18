@@ -7,13 +7,13 @@
 # use local variables
 # locate files - current directory, git repo, path, important locations
 # stash the number of specified commits with the saved commit message
-# get the diff for a commit
+# get the diff for a single commit
 # add function to count lines e.g. git branch -a | wc -l  ?? wc -l <<<
 
 # SHORTCUT TO NOTES
 
 export TOOLS_REPO=${HOME}/projects/myprojects/tools
-alias tools="open -a \"Sublime Text\" ${TOOLS_REPO}"
+alias tools="code ${TOOLS_REPO}"
 
 # ALIASES
 
@@ -23,8 +23,6 @@ alias zshrc="code ~/.zshrc"
 alias szshrc="source ~/.zshrc"
 
 alias sbrc="source ~/.bashrc"
-alias opens="open_sublime" # see function
-alias ol="open_sublime -l" # see function
 alias cl="copy_last" # see function
 alias h="history"
 alias hs="history_search" # see function
@@ -65,7 +63,6 @@ alias gca="git_commit_ammend" # see function
 # git_log_search
 # git_commit_ammend
 # history_search
-# open_sublime
 # precise_math
 # copy_last
 
@@ -254,33 +251,6 @@ Options:
   -e      :  'execute' - allows the user to enter a number to execute a command immediately"
 }
 
-
-# aliased to "opens"
-# Open files in Sublime
-# open_sublime <options> [file]
-#
-# Arguments:
-# file  : file path for the file to open
-#
-# Options:
-# -l    : reruns the last command and attempts to use the output
-#         as the [file] argument to open Sublime with
-function open_sublime {
-  if [ $# = 0 ]; then
-    open -a "Sublime Text"
-  elif [ $# = 1 ]; then
-    if [ "$1" = "-l" ]; then
-      history -a ~/.bash_history # append the session history to the bash_history file
-      last_command=`tail -2 ~/.bash_history | head -1`
-      last_output=`eval $last_command`
-      open -a "Sublime Text" $last_output
-    else
-      open -a "Sublime Text" "$1"
-    fi
-  else
-    echo "Too many arguments."
-  fi
-}
 
 # aliased to "cl"
 # Copies the output of the last command to the clipboard
