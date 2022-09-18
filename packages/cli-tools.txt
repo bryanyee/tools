@@ -1,6 +1,0 @@
-homebrew
-ag / ripgrep
-git
-tmux
-vim
-tldr
