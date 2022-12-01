@@ -29,8 +29,17 @@ yarn info <package>           # Fetch info about a package, including latest sta
 ### Misc.
 
 # File permissions
-ls -l | grep temp.txt # Show file permissions for a file
-chmod 777 temp.txt    # Give current user full access to the file
+ls -l | grep temp.txt            # Show file permissions for a file
+chmod 777 temp.txt               # Give current user full access to the file
+
+# File ownership
+sudo chown $(whoami) <filename>  # Change file ownership to yourself
+
+# File immutable flag
+ls -lO                           # Check whether the "uchg" flag is present on a file
+sudo chflags uchg android.jks.   # Set "uchg" flag to enable immutability
+sudo chflags nouchg android.jks. # Remove "uchg" flag
+
 
 # Kill a process
 ps | grep -i <search> # List running processes.
