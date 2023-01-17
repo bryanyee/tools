@@ -42,6 +42,10 @@ git log -G <regex>
 git log -p -G <regex>
 git log -G <regex> <path>
 
+# Find commits by a specific author:
+git log --author <email>
+git log -S <string> --author <email> # Find commits by a specific author that involved a string
+
 
 ### git tags
 git fetch --all --tags                    # Fetch all tags
