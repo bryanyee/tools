@@ -26,6 +26,15 @@ yarn why <package>            # Find why a version(s) of a package is included i
 yarn info <package>           # Fetch info about a package, including latest stable version.
 
 
+### Vim
+
+:wq      # Write file, save & quit
+:q!      # Quit immediately without saving
+
+:m +1    # Move current line down 1 line
+:m -2    # Move current line up 2 lines
+
+
 ### Misc.
 
 # File permissions
