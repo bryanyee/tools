@@ -79,9 +79,13 @@ diff <old_file> <new_file>
 # - Preserving the commits in a separate branch is desired.
 # - The commits include merge commits (can't be combined with rebasing).
 # - Saving the diff and sending it as a file (can't do this with stashes).
-git diff <base_branch> <feature_branch> > <file_name>.patch # Saves the diff between branches as a file
-git apply <file_name>.patch                                 # Applies the saved diff to the current branch
-
+# 1. Save the diff between branches as a file
+git diff <base_branch> <feature_branch> > <file_name>.patch
+# 2. Make sure you're on <base_branch>, then create a fresh copy of it
+git checkout -b <fresh_branch>
+# 3. Apply the saved diff to the fresh branch
+git apply <file_name>.patch
+# 4. Make sure to ignore the <file_name>.patch file when making the clean commit
 
 ### Push an empty commit
 git commit --allow-empty -m "Empty-Commit"
