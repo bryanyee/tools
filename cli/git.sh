@@ -79,6 +79,8 @@ diff <old_file> <new_file>
 # - Preserving the commits in a separate branch is desired.
 # - The commits include merge commits (can't be combined with rebasing).
 # - Saving the diff and sending it as a file (can't do this with stashes).
+# 0. Make sure the <base_branch> has the latest updates
+git pull origin <base_branch>
 # 1. Save the diff between branches as a file
 git diff <base_branch> <feature_branch> > <file_name>.patch
 # 2. Make sure you're on <base_branch>, then create a fresh copy of it
