@@ -1,0 +1,2 @@
+// Find text that isn't followed by other text on the same line:
+search_text(?!.+exclude_text)
