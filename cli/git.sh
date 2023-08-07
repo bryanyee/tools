@@ -54,6 +54,12 @@ git checkout tags/<tag> -b <branch>       # Checkout a branch for a tag
 git checkout tags/4.2.2 -b v4.2.2-branch
 
 
+### git checkout
+
+# CHeck out the version of a file from specific commit
+git checkout <commit> <file_path>
+
+
 ### Diffs
 
 # View file names only in a diff
@@ -69,6 +75,9 @@ git diff --numstat <branch> <branch>
 
 # View diff and ignore changes in whitespace (such as if code gets wrapped in a block and becomes indented)
 git diff -w  # git diff --ignore-all-space
+
+# View diff between branches, for a specific file
+git diff <branch_a> <branch_b> -- file_path
 
 # View diff between two files, outside of git
 diff <old_file> <new_file>
