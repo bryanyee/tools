@@ -76,6 +76,7 @@ export NVM_DIR="$HOME/.nvm"
 # history_search
 # precise_math
 # copy_last
+# run_interval
 
 
 
@@ -310,4 +311,19 @@ Arguments:
 
 Options:
  -p [N]     : 'precision' - specify the N number of digits of precision"
+}
+
+
+# Run a command at a given internal
+# run_interval "<command>" <interval>
+#
+# Arguments:
+# command  : the bash command to run, wrapped in double quotes
+# interval : the time interval in seconds
+function run_interval {
+  if [ $# = 2 ]; then
+    while true; do eval "$1"; sleep $2; done
+  else
+    echo 'Must have two arguments'
+  fi
 }
