@@ -1,7 +1,7 @@
 ESLint
-HTML Snippets
-VSCode Ruby
-Slim
+Prettier
+Ruby LSP
 Python
 Live Share
 GitLens
+YAML

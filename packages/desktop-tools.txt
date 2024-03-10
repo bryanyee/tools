@@ -1,5 +1,0 @@
-Full Page Screen Capture
-Postman
-Network Link Conditioner
-Visual Studio Code / Sublime
-Rectangle / Spectacle

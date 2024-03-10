@@ -7,12 +7,8 @@
 
 ### Homebrew
 - ag
-- ripgrep (alternative to grep and ag)
-- tmux
 - tldr
-
-### Pre-installed on MacOS
-- vim
+- zsh-syntax-highlighting
 
 ### Packages that come with xcode cli tools
 - git
