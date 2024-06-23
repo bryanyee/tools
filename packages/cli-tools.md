@@ -1,9 +1,10 @@
 ### Special setup
 - homebrew - https://brew.sh/
-- nvm - https://github.com/nvm-sh/nvm#installing-and-updating
 - xcode cli tools - `xcode-select --install`
   - Check installed version: https://mac.install.guide/commandlinetools/2.html
   - Installation: https://mac.install.guide/commandlinetools/4.html
+- nvm - https://github.com/nvm-sh/nvm#installing-and-updating
+  - (must install after xcode cli & git)
 - rvm
   - Install gnupg via homebrew first
   - Install rvm: https://rvm.io/rvm/install
