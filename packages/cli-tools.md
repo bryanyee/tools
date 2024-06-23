@@ -41,3 +41,8 @@ rvm install ruby --latest
 The latest ruby version (3.3.2) installed successfully on an Apple M2 Mac, Sonoma 14.4.
 
 Otherwise, if there's an error including `Error running '__rvm_make -j16'`, try using openssl@1.1 for the ruby install: https://github.com/rvm/rvm/issues/5404#issuecomment-1806701326
+
+### Node
+```
+nvm install stable
+```
