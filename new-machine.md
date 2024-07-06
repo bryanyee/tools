@@ -20,6 +20,7 @@
 - Ruby
 - Node
 - Python
+- Postgres - https://postgresapp.com/
 
 ### Decomission old machine
 - Sign out of Apple ID, iMessage, FaceTime, Mac settings Internet Accounts
