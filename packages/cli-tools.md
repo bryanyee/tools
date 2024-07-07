@@ -20,6 +20,7 @@
 
 ### Packages that come with xcode cli tools
 - git
+- gcc compiler (needed for Python)
 - To view the whole list (https://mac.install.guide/commandlinetools/8.html):
 ```
 ls /Library/Developer/CommandLineTools/usr/bin/
@@ -45,4 +46,14 @@ Otherwise, if there's an error including `Error running '__rvm_make -j16'`, try 
 ### Node
 ```
 nvm install stable
+```
+
+### Python
+Docs: https://docs.python-guide.org/starting/install3/osx/
+```
+brew install python
+```
+Add to the PATH in .zshrc:
+```
+export PATH="$PATH:/opt/homebrew/opt/python@3.12/libexec/bin"
 ```
