@@ -327,3 +327,19 @@ function run_interval {
     echo 'Must have two arguments'
   fi
 }
+
+
+# Squashes the last two commits, and uses the commit message of the earlier commit.
+function squash_last_two {
+  # Get the full commit message of the second-to-last commit
+  commit_msg=$(git log --format=%B -n 1 HEAD~1)
+
+  # Soft reset to the commit before the last two
+  git reset --soft HEAD~2
+
+  # Commit with the saved message, preserving formatting
+  git commit -F- <<EOF
+$commit_msg
+EOF
+  echo "Last two commits have been squashed."
+}
