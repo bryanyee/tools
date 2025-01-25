@@ -18,13 +18,10 @@ alias tools="code ${TOOLS_REPO}"
 
 
 # ALIASES
-
-alias bashrc="code ~/.bashrc"
-alias sbashrc="source ~/.bashrc"
 alias zshrc="code ~/.zshrc"
 alias szshrc="source ~/.zshrc"
+alias p="cd ~/projects"
 
-alias sbrc="source ~/.bashrc"
 alias cl="copy_last" # see function
 alias h="history"
 alias hs="history_search" # see function
@@ -37,7 +34,6 @@ alias bx="bundle exec"
 alias pm="precise_math" # see function
 alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
-alias pcd="cd ~/projects; cd"
 alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 10001; then kill <process id>
 alias ip="ipconfig getifaddr en0"
 
@@ -50,8 +46,6 @@ alias gsl="git stash list"
 alias gb="git branch"
 alias gbs="git branch | grep"
 alias gcb="git branch; git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy; echo Copied current branch to clipboard."
-alias groot="git rev-parse --show-toplevel"
-alias gcdroot="cd `git rev-parse --show-toplevel`"
 alias gd="git diff"
 alias gdl="git diff HEAD^ HEAD"
 alias gdc="git diff --cached"
