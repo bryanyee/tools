@@ -18,9 +18,10 @@ alias tools="code ${TOOLS_REPO}"
 
 
 # ALIASES
+
 alias zshrc="code ~/.zshrc"
 alias szshrc="source ~/.zshrc"
-alias p="cd ~/projects"
+alias restart="exec $SHELL"
 
 alias cl="copy_last" # see function
 alias h="history"
@@ -56,10 +57,8 @@ alias gca="git_commit_ammend" # see function
 
 # MISC.
 
-# nvm - Added automatically https://github.com/nvm-sh/nvm#install--update-script
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Add configuration required for specifc tooling, like nvm, rvm, and pyenv
+
 
 
 # FUNCTIONS
@@ -192,6 +191,8 @@ Arguments:
 message  :  the new commit message, in quotes"
 }
 
+
+# NOTE: Needs to be re-written for zsh instad of bash
 # aliased to "hs"
 # Display terminal command history, filtered by a regex match
 # history_search <option> [search]
@@ -258,6 +259,7 @@ Options:
 }
 
 
+# NOTE: Needs to be re-written for zsh instad of bash
 # aliased to "cl"
 # Copies the output of the last command to the clipboard
 # copy_last
@@ -269,6 +271,7 @@ function copy_last {
   last_output=`eval $last_command`
   echo -n "$last_output" | pbcopy
 }
+
 
 # aliased to "pm"
 # Execute simple mathematical expressions with precision.
@@ -312,7 +315,7 @@ Options:
 # run_interval "<command>" <interval>
 #
 # Arguments:
-# command  : the bash command to run, wrapped in double quotes
+# command  : the command to run, wrapped in double quotes
 # interval : the time interval in seconds
 function run_interval {
   if [ $# = 2 ]; then
