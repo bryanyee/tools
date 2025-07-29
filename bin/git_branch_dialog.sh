@@ -14,6 +14,12 @@
 # - Run `gbd`
 
 function git_branch_dialog {
+  # Check if dialog is installed
+  if ! command -v dialog &> /dev/null; then
+    echo "Dialog is not installed. Please run \`brew install dialog\` and try again."
+    return
+  fi
+
   # Get the current branch: https://stackoverflow.com/a/12142066
   curr_branch=`git rev-parse --abbrev-ref HEAD`
   # Return early if not on a git branch
