@@ -36,7 +36,8 @@ alias pm="precise_math" # see function
 alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
 alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 10001; then kill <process id>
-alias ip="ipconfig getifaddr en0"
+alias ip_local="ipconfig getifaddr en0" # local private ip
+alias ip_public="curl ifconfig.me" # public ip
 
 # git aliases
 alias gbd="git_branch_dialog.sh" # file in PATH at /usr/local/bin
