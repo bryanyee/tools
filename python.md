@@ -18,60 +18,21 @@ exec "$SHELL"
 Install Python dependencies:
 - See https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 
-### Install python
+### Setup python environment in a new repo with pyenv and venv
 ```
+# In the new repo
 pyenv install 3.11.8
+pyenv local 3.11.8 # Select the python version to use in repo
+python -m venv .venv # Create a virtual environment
+source .venv/bin/activate # Activate the virtual environment
+pip install flask # Install initial packages
+pip freeze > requirements.txt # Save dependencies to requirements.txt
 ```
 
-### Prepare project directory and set up pipenv
-Move into the project directory for a Python project:
+### Use venv to manage the project
+Install packages specified in requirements.txt (such as after pulling the latest changes from version control):
 ```
-mkdir <project>
-cd <project>
-```
-Select the python version to use in the local directory:
-```
-pyenv local 3.11.8
-```
-Install pipenv:
-```
-pip install pipenv
-```
-Set pipenv to use the current python version from pyenv:
-```
-pipenv --python $(which python)
-```
-
-### Set up Pipfile and the virtual environment 
-The first run of the install command creates Pipfile & Pipfile.lock, and start a new virtual environment for the project:
-```
-pipenv install
-```
-Install desired packages:
-```
-pipenv install flask
-```
-
-### Use pipenv to manage the project
-Install packages specified in Pipfile.lock (such as after pulling the latest changes from version control):
-```
-pipenv sync
-```
-Activate the virtualenv for the current project directory:
-```
-pipenv shell
-```
-Run a command in the virtualenv:
-```
-pipenv run <command>
-```
-Show the path of the virtual environment:
-```
-pipenv --venv
-```
-Remove the virtual environment of the current project directory:
-```
-pipenv --rm
+pip install -r requirements.txt
 ```
 
 ### Start a flask app
@@ -85,7 +46,7 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 ```
-Run the flask app:
+Run the flask app (with venv activated):
 ```
-pipenv run flask run
+flask run
 ```
