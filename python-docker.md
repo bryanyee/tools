@@ -48,7 +48,7 @@ services:
   web:
     build: .
     ports:
-      - "5001:5000"
+      - "5001:5000" # AirPlay Receiver on Macs used port 5000
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/flaskdb
     depends_on:
