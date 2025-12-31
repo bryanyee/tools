@@ -35,7 +35,7 @@ alias bx="bundle exec"
 alias pm="precise_math" # see function
 alias ccount="wc -m <<<"
 alias wcount="wc -w <<<"
-alias ports="lsof -t -i" # e.g. lsof -t -i :10001 to view processes at port 10001; then kill <process id>
+alias ports="lsof -i" # e.g. `ports :10001` to view processes at port 10001
 alias ip_local="ipconfig getifaddr en0" # local private ip
 alias ip_public="curl ifconfig.me" # public ip
 
