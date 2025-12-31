@@ -30,9 +30,10 @@ pip freeze > requirements.txt # Save dependencies to requirements.txt
 ```
 
 ### Use venv to manage the project
-Install packages specified in requirements.txt (such as after pulling the latest changes from version control):
+Run the following when re-entering a directory with python already set up:
 ```
-pip install -r requirements.txt
+source .venv/bin/activate # Activate the virtual environment
+pip install -r requirements.txt # Installs the latest updates from requirements.txt
 ```
 
 ### Start a flask app
